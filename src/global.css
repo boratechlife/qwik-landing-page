@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+@import url('http://fonts.cdnfonts.com/css/manrope');
+@tailwind base;
+@tailwind components;
+
+body {
+  @apply overflow-x-hidden;
+}
+@tailwind utilities;
