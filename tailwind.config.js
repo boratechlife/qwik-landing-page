@@ -4,22 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#141d55",
-        secondary: {
-          1: "rgb(12,207,240)",
-          2: "rgba(12,207,240,0.15)",
-          3: "rgba(12,207,240,0.12)",
-          4: "rgba(12,207,240,0.08)",
-        },
-        accent: "#FFBB04",
-        "light-white": "rgba(255,255,255,0.3)",
-        "light-blue": "#2E526B",
-        turquoise: {
-          1: "#0ccff0",
-          2: "#dbf8fd",
-          3: "#caf5fc",
-          
-        },
+        primary: { 1: '#217BF4', 2: '#0A093D', 3: '#2F2C4A', 4: '#E5F0FD' },
+        washed: { 1: '#2B2B39', 2: '#656464', 3: '#8c8c8c', 4: '#4A4A56' },
+        yellowish: '#FFAF2E',
       },
     },
   },
