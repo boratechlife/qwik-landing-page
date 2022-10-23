@@ -36,7 +36,6 @@ export default component$(() => {
                 <div class="dropdown-menu relative">
                   <button
                     id="dropdownToggle"
-                    onclick="toggleMenu()"
                     class="flex justify-between items-center gap-2 text-washed-2 text-lg md:text-sm"
                   >
                     Community
@@ -123,11 +122,7 @@ export default component$(() => {
             </div>
 
             {/* <!-- mobile toggle --> */}
-            <button
-              class="md:hidden"
-              data-mobile-open="false"
-              onclick="showMobileNav(this)"
-            >
+            <button class="md:hidden" data-mobile-open="false">
               <svg
                 id="openIcon"
                 xmlns="http://www.w3.org/2000/svg"
