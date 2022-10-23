@@ -5,7 +5,7 @@ export default component$(() => {
   return (
     <>
       <section
-        class="w-full"
+        class=""
         style="
         background: linear-gradient(311.76deg, #d4e7fe -15.24%, #ffffff 78.85%);
       "
@@ -22,7 +22,7 @@ export default component$(() => {
               <ul
                 id="Navigation"
                 data-isMobile="false"
-                class="transition-all hidden lg:block duration-300 ease-in-out flex flex-col md:flex-row absolute md:static top-0 left-0 bg-white/95 md:bg-transparent site-container pt-16 md:p-0 md:w-auto min-h-screen md:min-h-full md:items-center gap-8"
+                class="transition-all duration-300 ease-in-out flex flex-col md:flex-row absolute md:static top-0 left-0 bg-white/95 md:bg-transparent site-container pt-16 md:p-0 md:w-auto min-h-screen md:min-h-full md:items-center gap-8"
               >
                 <li>
                   <a
@@ -146,7 +146,7 @@ export default component$(() => {
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="w-6 h-6 hidden"
+                class="w-6 h-6"
               >
                 <path
                   stroke-linecap="round"
