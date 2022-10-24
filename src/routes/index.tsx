@@ -1,7 +1,8 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useStore } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 
 export default component$(() => {
+  const menu = useStore({ open: false });
   return (
     <>
       <section
@@ -37,6 +38,14 @@ export default component$(() => {
                   <button
                     id="dropdownToggle"
                     class="flex justify-between items-center gap-2 text-washed-2 text-lg md:text-sm"
+                    onClick$={() => {
+                      document
+                        .getElementById('dropdownIcon')
+                        ?.classList.toggle('rotate-180');
+                      document
+                        .getElementById('dropdown')
+                        ?.classList.toggle('hidden');
+                    }}
                   >
                     Community
                     <img
@@ -122,38 +131,46 @@ export default component$(() => {
             </div>
 
             {/* <!-- mobile toggle --> */}
-            <button class="md:hidden" data-mobile-open="false">
-              <svg
-                id="openIcon"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-7 h-7"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
-                />
-              </svg>
+            <button
+              class="md:hidden"
+              onClick$={() => (menu.open = true)}
+              data-mobile-open={menu.open}
+            >
+              {!menu.open && (
+                <svg
+                  id="openIcon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-7 h-7"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
+                  />
+                </svg>
+              )}
 
-              <svg
-                id="closeIcon"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              {menu.open && (
+                <svg
+                  id="closeIcon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              )}
             </button>
 
             {/* <!-- search / login --> */}

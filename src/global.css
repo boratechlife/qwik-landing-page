@@ -5,5 +5,29 @@
 
 body {
   @apply overflow-x-hidden;
+  font-family: 'Inter', sans-serif;
 }
+
+.site-container {
+  @apply px-5 md:px-8 lg:px-36;
+}
+
+/* * {
+  border: 1px red solid;
+} */
+
+ul[data-isMobile='false'] {
+  @apply -left-[100%];
+}
+ul[data-isMobile='true'] {
+  @apply w-4/5;
+}
+
+/* [data-mobile-open='false'] #closeIcon {
+  display: none;
+}
+[data-mobile-open='true'] #openIcon {
+  display: none;
+} */
+
 @tailwind utilities;
